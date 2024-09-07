@@ -1,0 +1,14 @@
+./cpr
+./cpr/*.h5
+./idiot
+./idiot/*.h5
+*.pcm
+*.f32
+*.s16
+data.16
+AUTHORS
+*.bin
+*.sh
+./models
+LPCNet.yml
+

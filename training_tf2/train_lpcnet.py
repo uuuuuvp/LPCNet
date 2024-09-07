@@ -47,7 +47,7 @@ parser.add_argument('--grua-size', metavar='<units>', default=384, type=int, hel
 parser.add_argument('--grub-size', metavar='<units>', default=16, type=int, help='number of units in GRU B (default 16)')
 parser.add_argument('--cond-size', metavar='<units>', default=128, type=int, help='number of units in conditioning network, aka frame rate network (default 128)')
 parser.add_argument('--epochs', metavar='<epochs>', default=120, type=int, help='number of epochs to train for (default 120)')
-parser.add_argument('--batch-size', metavar='<batch size>', default=128, type=int, help='batch size to use (default 128)')
+parser.add_argument('--batch-size', metavar='<batch size>', default=64, type=int, help='batch size to use (default 128)')
 parser.add_argument('--end2end', dest='flag_e2e', action='store_true', help='Enable end-to-end training (with differentiable LPC computation')
 parser.add_argument('--lr', metavar='<learning rate>', type=float, help='learning rate')
 parser.add_argument('--decay', metavar='<decay>', type=float, help='learning rate decay')

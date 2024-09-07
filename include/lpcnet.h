@@ -42,15 +42,15 @@
 #endif
 
 
-#define NB_FEATURES 20
-#define NB_TOTAL_FEATURES 36
+#define NB_FEATURES 16
+#define NB_TOTAL_FEATURES 32
 
 /** Number of bytes in a compressed packet. */
 #define LPCNET_COMPRESSED_SIZE 8
 /** Number of audio samples in a packet. */
-#define LPCNET_PACKET_SAMPLES (4*160)
+#define LPCNET_PACKET_SAMPLES (4*80)
 /** Number of audio samples in a feature frame (not for encoding/decoding). */
-#define LPCNET_FRAME_SIZE (160)
+#define LPCNET_FRAME_SIZE (80)
 
 typedef struct LPCNetState LPCNetState;
 

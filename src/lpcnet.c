@@ -90,7 +90,8 @@ void run_frame_network(LPCNetState *lpcnet, float *gru_a_condition, float *gru_b
     float rc[LPC_ORDER];
     /* Matches the Python code -- the 0.1 avoids rounding issues. */
     pitch = (int)floor(.1 + 50*features[NB_BANDS]+100);
-    pitch = IMIN(255, IMAX(33, pitch));
+    // pitch = IMIN(255, IMAX(33, pitch));
+    pitch = IMIN(127, IMAX(21, pitch));     // change pitch rank
     net = &lpcnet->nnet;
     RNN_COPY(in, features, NB_FEATURES);
     compute_embedding(&embed_pitch, &in[NB_FEATURES], pitch);

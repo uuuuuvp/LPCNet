@@ -41,7 +41,7 @@ import sys
 from tf_funcs import *
 from diffembed import diff_Embed
 
-frame_size = 160
+frame_size = 80
 pcm_bits = 8
 embed_size = 128
 pcm_levels = 2**pcm_bits
@@ -58,7 +58,7 @@ def tree_to_pdf(p, samples):
 
 def tree_to_pdf_train(p):
     #FIXME: try not to hardcode the 2400 samples (15 frames * 160 samples/frame)
-    return tree_to_pdf(p, 2400)
+    return tree_to_pdf(p, 1200)
 
 def tree_to_pdf_infer(p):
     return tree_to_pdf(p, 1)
@@ -230,7 +230,7 @@ class WeightClip(Constraint):
 
 constraint = WeightClip(0.992)
 
-def new_lpcnet_model(rnn_units1=384, rnn_units2=16, nb_used_features=20, batch_size=128, training=False, adaptation=False, quantize=False, flag_e2e = False, cond_size=128, lpc_order=16):
+def new_lpcnet_model(rnn_units1=384, rnn_units2=16, nb_used_features=16, batch_size=128, training=False, adaptation=False, quantize=False, flag_e2e = False, cond_size=128, lpc_order=16):
     pcm = Input(shape=(None, 1), batch_size=batch_size)
     dpcm = Input(shape=(None, 3), batch_size=batch_size)
     feat = Input(shape=(None, nb_used_features), batch_size=batch_size)
